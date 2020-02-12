@@ -16,7 +16,7 @@ I then wanted the message to be optional so added in `blank=true`.
   created_at = models.DateTimeField(/auto_now_add/=True)
 ``` 
 
-#Serializers
+# Serializers
 
 After making the necessary migrations on my leads models, I had to think about serializers which take complex data like models and querysets and convert them to python datatypes, to then easily render to JSON and other content types should you wish. I'm working with a JSON api, therefore that’ll be what I want the serialisers to serve. 
 
