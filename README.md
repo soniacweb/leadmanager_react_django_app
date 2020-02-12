@@ -86,7 +86,7 @@ I did this by creating a class called Meta, setting my model to lead, which I br
 
 Inside my leads folder, I created a file called **api.py** and in here, I wanted to bring in the model, viewsets and permissions from the rest_framework, and my Lead Serializer into this.
 
-Viewsets allow us to create full crud apis (create, update, and delete), without having to specify explicit methods for the functionality. Creating a viewset means i dont need to create specific routes, i can just use the *DefaultRouter* that comes with this feature, and simply register an end point, for example *api/leads* so I can make get and post requests etc. 
+Viewsets allow us to create full crud apis (create, update, and delete), without having to specify explicit methods for the functionality. Creating a viewset means i dont need to create specific routes, I can just use the *DefaultRouter* that comes with this feature, and simply register an end point, for example *api/leads* so I can make get and post requests etc. 
 
 ## Creating my Lead Viewset
 
