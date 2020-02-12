@@ -72,8 +72,8 @@ I create a sterilizer class, and a class of meta:
 
 ## Lead Serializer 
 
-#I’m going to bring in from Serializer, ModelSerializer. Essentially turning my lead model into a lead serializer, or rather, creating one from it.
-#i did this by creating a class called Meta, setting my model to lead, which i brought in through ModelSerializer. 
+I’m going to bring in from Serializer, ModelSerializer. Essentially turning my lead model into a lead serializer, or rather, creating one from it.
+I did this by creating a class called Meta, setting my model to lead, which I brought in through ModelSerializer. 
 `__all__` brings in all the fields from the Lead model.
 
 ```class LeadSerializer(serializers.ModelSerializer):
