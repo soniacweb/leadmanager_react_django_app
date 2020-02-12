@@ -41,7 +41,7 @@ Be deployed online so it's publicly accessible.
 
 | Day | Tasks |
 | --- | --- |
-| 1 | Create the backend: Models, Serializers, and building the API |
+| 1 | Create the backend: Models, Serializers, urls, and building the API |
 | 2 | TBC |
 | 3 | TBC |
 | 4 | TBC|
@@ -90,7 +90,8 @@ Viewsets allow us to create full crud apis (create, update, and delete), without
 
 ## Creating my Lead Viewset
 
-I created a class called Lead: 
+I created a class called Lead and bring in from *viewsets*, ModelViewSets. I specified a queryset which is a query that grabs all the leads, hence using `.objects.all()` method and attaching it to the model, *Lead*. I needed a permission class, which is a list identifying a user specifically having access to their own leads. 
+
 
 ```
 class LeadViewSet(viewsets.ModelViewSet):
@@ -102,7 +103,31 @@ class LeadViewSet(viewsets.ModelViewSet):
 
 ```
 
+## Creating my urls 
 
+Under leadmanager, there is a root urls.py file where I initially needed to identify a leads/urls path.
+
+```
+from django.contrib import admin
+from django.urls import path, include  
+
+urlpatterns = [
+    path('', include('leads.urls')),
+]
+```
+
+I created a urls.py file inside the leads folder and set a variable called router to set it to a defaulkt router. Then I registered my routes, identifying the api endpoint and passed in my viewset. Urlpatterns will essentially supply me the urls that are registered for the api/leads endpoint. 
+
+```
+from rest_framework import routers 
+from .api import LeadViewSet
+
+router = routers.DefaultRouter()
+router.register('api/leads', LeadViewSet 'leads')
+
+urlpatterns = router.urls
+
+```
 
 
 # Frontend
